@@ -22,7 +22,7 @@ class ApiController extends Controller
 
     public function get(Request $request)
     {
-        $page_uid = $request["page_uid"];
+        $page_uid["page_uid"] = $request["page_uid"];
 
         $client = new Client(['base_uri' => 'http://127.0.0.1:8000/']);
         $response = $client->request('GET', 'api/data/', $page_uid);
